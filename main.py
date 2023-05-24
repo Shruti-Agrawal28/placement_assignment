@@ -1,3 +1,4 @@
+import numpy as np
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -39,11 +40,13 @@ knn.fit(X_train_scaled, y_train)
 
 # Predict labels for the test set
 y_pred = knn.predict(X_test_scaled)
-
+prediction = le.inverse_transform(y_pred)
 # Evaluate the model
 report = classification_report(y_test, y_pred)
 
 # Display the classification report in Streamlit
+st.text()
 st.text("Classification Report:")
 st.text(report)
-
+st.text (f"some predicted values: {prediction}")
+print(df)
