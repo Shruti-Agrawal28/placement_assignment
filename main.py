@@ -41,12 +41,15 @@ knn.fit(X_train_scaled, y_train)
 # Predict labels for the test set
 y_pred = knn.predict(X_test_scaled)
 prediction = le.inverse_transform(y_pred)
+true = le.inverse_transform(y_test)
 # Evaluate the model
 report = classification_report(y_test, y_pred)
 
 # Display the classification report in Streamlit
-st.text()
+
 st.text("Classification Report:")
 st.text(report)
-st.text (f"some predicted values: {prediction}")
+st.text (f"some true values: {true[:5]}")
+st.text (f"some predicted values: {prediction[:5]}")
+
 print(df)
