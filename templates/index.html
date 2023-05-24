@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Genre Prediction</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Genre Prediction</h1>
+    <div class="input-container">
+      <label for="index">Enter Index:</label>
+      <input type="text" id="index" name="index" required>
+      <button onclick="getRow()">Get Row</button>
+    </div>
+    <div class="result">
+      <h3>Row Details:</h3>
+      <p id="row"></p>
+      <h3>Genre:</h3>
+      <p id="genre"></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
